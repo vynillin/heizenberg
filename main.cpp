@@ -38,8 +38,8 @@ void lattice()
         Nb = d * lx*ly;
 
         bound_spin_ID = new int*[2];
-        bound_spin_ID[0] = new int[2 * Nb]();  // всё одним куском памяти
-        bound_spin_ID[1] = bound_spin_ID[0] + Nb;
+        bound_spin_ID[0] = new int[2 * Nb]();
+        bound_spin_ID[1] = bound_spin_ID[0] + Nb;     // всё одним куском памяти
 
 
         for (int i=0; i<lx; i++){
@@ -590,7 +590,7 @@ int main()
     std::ofstream outfile(filename.str(), std::ios::app);
 
     outfile << "Beta\tEnergy\tSpecific Heat\tUniform Susceptibility\tMagnetization^2\tNumber of H-operators\t(Number of H-operators)^2" << std::endl;
-    for (Nn=0; Nn<=100; Nn++){
+    for (Nn=0; Nn<=2; Nn++){
         for(int t=0; t<t_steps;t++){
             beta = 1.0 / (temp_ini + dt * t);
             NH = 0;
