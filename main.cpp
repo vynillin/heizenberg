@@ -486,7 +486,8 @@ void results() {
             << std::accumulate(x.begin(), x.end(), 0.0)    << "\t"
             << std::accumulate(stag.begin(), stag.end(), 0.0) << "\t"
             << std::accumulate(n_op.begin(), n_op.end(), 0.0) << "\t"
-            << std::accumulate(n_op2.begin(), n_op2.end(), 0.0) << "\n";
+            << std::accumulate(n_op2.begin(), n_op2.end(), 0.0) << "\t"
+            << L << "\n";
         out.close();
     }
 }
@@ -589,7 +590,7 @@ int main()
     filename << "results_" << lx << "x" << ly << "x" << lz << ".dat";
     std::ofstream outfile(filename.str(), std::ios::app);
 
-    outfile << "Beta\tEnergy\tSpecific Heat\tUniform Susceptibility\tMagnetization^2\tNumber of H-operators\t(Number of H-operators)^2" << std::endl;
+    outfile << "Beta\tEnergy\tSpecific Heat\tUniform Susceptibility\tMagnetization^2\tNumber of H-operators\t(Number of H-operators)^2\tL" << std::endl;
     for (Nn=0; Nn<=2; Nn++){
         for(int t=0; t<t_steps;t++){
             beta = 1.0 / (temp_ini + dt * t);
